@@ -1,12 +1,13 @@
 const express = require('express');
 const fileUpload = require('express-fileupload');
+const morgan = require("morgan")
 const fs = require('fs'); // Required for file operations
 const app = express();
 const port = 3000; // Choose a suitable port
 
 // Middleware to handle file uploads
 app.use(fileUpload());
-
+app.use(morgan("dev"))
 // Define the destination folder for uploaded images
 const uploadFolder = './uploads'; // Modify this path as needed
 
